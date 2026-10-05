@@ -1,6 +1,5 @@
 name: Parallel Python Runner
 
-# This allows you to click a button to run the script manually
 on: 
   workflow_dispatch: 
 
@@ -8,18 +7,16 @@ jobs:
   run-python:
     runs-on: ubuntu-latest
     strategy:
-      # Don't cancel other runs if one fails
       fail-fast: false 
       matrix:
-        # This creates 5 parallel machines. Add more numbers to scale up!
         machine: [1, 2, 3, 4, 5] 
 
     steps:
-      # 1. Grab your code
+      # 1. Checkout repository code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Install Python
+      # 2. Set up Python environment
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
