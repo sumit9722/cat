@@ -29,4 +29,4 @@ jobs:
 
       # 4. Run the script securely
       - name: Run script
-        run: python vote_cat.py --hearts 100000 --workers 4 --delay 0
+        run: python vote_cat_resilient.py --hearts 200000 --workers 4
