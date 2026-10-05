@@ -9,7 +9,12 @@ jobs:
     strategy:
       fail-fast: false 
       matrix:
-        machine: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]
+        machine: [
+          1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+          11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+          21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+          31, 32, 33, 34, 35, 36, 37, 38, 39, 40
+        ]
 
     steps:
       # 1. Checkout repository code
@@ -24,4 +29,4 @@ jobs:
 
       # 4. Run the script securely
       - name: Run script
-        run: python vote_cat_resilient.py --hearts 200000 --workers 4
+        run: python vote_cat.py --hearts 100000 --workers 4 --delay 0
