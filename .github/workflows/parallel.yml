@@ -29,4 +29,4 @@ jobs:
 
       # 4. Run the script securely
       - name: Run script
-        run: python vote_cat_resilient.py --hearts 200000 --workers 4
+        run: python vote_dog.py --hearts 1200 --workers 4
