@@ -6,7 +6,7 @@ app = modal.App("direct-script-runner")
 image = (
     modal.Image.debian_slim()
     .pip_install("requests", "beautifulsoup4")
-    .add_local_file("vote_dog.py", remote_path="/root/vote_dog.py")
+    .add_local_file("vote_cat_resilient.py", remote_path="/root/vote_cat_resilient.py")
 )
 
 # 3. Define the cloud function
@@ -16,7 +16,7 @@ def run_machine(machine_id):
     
     # This runs your script exactly as you would type it in your own terminal
     subprocess.run([
-        "python", "/root/vote_dog.py", 
+        "python", "/root/vote_cat_resilient.py", 
         "--hearts", "1200", 
         "--workers", "4"
     ])
@@ -27,4 +27,4 @@ def main():
     print("Launching 100 cloud machines...")
     
     # .map() spins up 100 containers and runs the subprocess on all of them
-    list(run_machine.map(range(1, 101)))
+    list(run_machine.map(range(1, 201)))
